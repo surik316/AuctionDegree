@@ -1,0 +1,6 @@
+framework module Pods_AuctionDegree {
+  umbrella header "Pods-AuctionDegree-umbrella.h"
+
+  export *
+  module * { export * }
+}

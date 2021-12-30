@@ -7,20 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		892642ECA1D0F2F357EE5628 /* Pods_AuctionDegree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 153FF0917DD82416B74EF9EA /* Pods_AuctionDegree.framework */; };
+		AA4E94202778B35E008C3F60 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E941F2778B35E008C3F60 /* AuthViewController.swift */; };
+		AA4E94222778B36B008C3F60 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E94212778B36B008C3F60 /* AuthViewModel.swift */; };
+		AA4E94242778B378008C3F60 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E94232778B378008C3F60 /* AuthModel.swift */; };
+		AA4E94272778B3FC008C3F60 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E94262778B3FC008C3F60 /* AuthTextField.swift */; };
+		AA4E942C277C88C8008C3F60 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E942B277C88C8008C3F60 /* UIColor+Hex.swift */; };
+		AA4E942E277C8DB8008C3F60 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E942D277C8DB8008C3F60 /* LogoView.swift */; };
+		AA4E9430277C917E008C3F60 /* EntranceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E942F277C917E008C3F60 /* EntranceButton.swift */; };
 		AA89B7F72778ADA300BDC7C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA89B7F62778ADA300BDC7C6 /* AppDelegate.swift */; };
-		AA89B7F92778ADA300BDC7C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA89B7F82778ADA300BDC7C6 /* SceneDelegate.swift */; };
 		AA89B7FB2778ADA300BDC7C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA89B7FA2778ADA300BDC7C6 /* ViewController.swift */; };
-		AA89B7FE2778ADA300BDC7C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA89B7FC2778ADA300BDC7C6 /* Main.storyboard */; };
 		AA89B8002778ADA500BDC7C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA89B7FF2778ADA500BDC7C6 /* Assets.xcassets */; };
 		AA89B8032778ADA500BDC7C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA89B8012778ADA500BDC7C6 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		153FF0917DD82416B74EF9EA /* Pods_AuctionDegree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuctionDegree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3296F9B86C3DC3F8FE695ADA /* Pods-AuctionDegree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuctionDegree.debug.xcconfig"; path = "Target Support Files/Pods-AuctionDegree/Pods-AuctionDegree.debug.xcconfig"; sourceTree = "<group>"; };
+		383070668A82EB7573ED5952 /* Pods-AuctionDegree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuctionDegree.release.xcconfig"; path = "Target Support Files/Pods-AuctionDegree/Pods-AuctionDegree.release.xcconfig"; sourceTree = "<group>"; };
+		AA4E941F2778B35E008C3F60 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		AA4E94212778B36B008C3F60 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		AA4E94232778B378008C3F60 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		AA4E94262778B3FC008C3F60 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
+		AA4E942B277C88C8008C3F60 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		AA4E942D277C8DB8008C3F60 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		AA4E942F277C917E008C3F60 /* EntranceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceButton.swift; sourceTree = "<group>"; };
 		AA89B7F32778ADA300BDC7C6 /* AuctionDegree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuctionDegree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA89B7F62778ADA300BDC7C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AA89B7F82778ADA300BDC7C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AA89B7FA2778ADA300BDC7C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AA89B7FD2778ADA300BDC7C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA89B7FF2778ADA500BDC7C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA89B8022778ADA500BDC7C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA89B8042778ADA500BDC7C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -31,17 +45,73 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				892642ECA1D0F2F357EE5628 /* Pods_AuctionDegree.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03A6E5183EC6CA7B1F8AA4AD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3296F9B86C3DC3F8FE695ADA /* Pods-AuctionDegree.debug.xcconfig */,
+				383070668A82EB7573ED5952 /* Pods-AuctionDegree.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8B4C5A1CE300873A6DE047E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				153FF0917DD82416B74EF9EA /* Pods_AuctionDegree.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA4E941D2778B1C7008C3F60 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				AA4E941F2778B35E008C3F60 /* AuthViewController.swift */,
+				AA4E94252778B3E8008C3F60 /* Views */,
+				AA4E94212778B36B008C3F60 /* AuthViewModel.swift */,
+				AA4E94232778B378008C3F60 /* AuthModel.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		AA4E941E2778B1D1008C3F60 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		AA4E94252778B3E8008C3F60 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AA4E94262778B3FC008C3F60 /* AuthTextField.swift */,
+				AA4E942D277C8DB8008C3F60 /* LogoView.swift */,
+				AA4E942F277C917E008C3F60 /* EntranceButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AA4E942A277C88AD008C3F60 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AA4E942B277C88C8008C3F60 /* UIColor+Hex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		AA89B7EA2778ADA300BDC7C6 = {
 			isa = PBXGroup;
 			children = (
 				AA89B7F52778ADA300BDC7C6 /* AuctionDegree */,
 				AA89B7F42778ADA300BDC7C6 /* Products */,
+				03A6E5183EC6CA7B1F8AA4AD /* Pods */,
+				8B4C5A1CE300873A6DE047E2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +127,10 @@
 			isa = PBXGroup;
 			children = (
 				AA89B7F62778ADA300BDC7C6 /* AppDelegate.swift */,
-				AA89B7F82778ADA300BDC7C6 /* SceneDelegate.swift */,
+				AA4E941E2778B1D1008C3F60 /* Registration */,
+				AA4E941D2778B1C7008C3F60 /* Auth */,
+				AA4E942A277C88AD008C3F60 /* Extensions */,
 				AA89B7FA2778ADA300BDC7C6 /* ViewController.swift */,
-				AA89B7FC2778ADA300BDC7C6 /* Main.storyboard */,
 				AA89B7FF2778ADA500BDC7C6 /* Assets.xcassets */,
 				AA89B8012778ADA500BDC7C6 /* LaunchScreen.storyboard */,
 				AA89B8042778ADA500BDC7C6 /* Info.plist */,
@@ -74,9 +145,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA89B8072778ADA500BDC7C6 /* Build configuration list for PBXNativeTarget "AuctionDegree" */;
 			buildPhases = (
+				79CE5F8462C20EC9C6802FD3 /* [CP] Check Pods Manifest.lock */,
 				AA89B7EF2778ADA300BDC7C6 /* Sources */,
 				AA89B7F02778ADA300BDC7C6 /* Frameworks */,
 				AA89B7F12778ADA300BDC7C6 /* Resources */,
+				3A9F0AB41EE6B0A0381DF734 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,34 +200,73 @@
 			files = (
 				AA89B8032778ADA500BDC7C6 /* LaunchScreen.storyboard in Resources */,
 				AA89B8002778ADA500BDC7C6 /* Assets.xcassets in Resources */,
-				AA89B7FE2778ADA300BDC7C6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A9F0AB41EE6B0A0381DF734 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AuctionDegree/Pods-AuctionDegree-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AuctionDegree/Pods-AuctionDegree-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AuctionDegree/Pods-AuctionDegree-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79CE5F8462C20EC9C6802FD3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AuctionDegree-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AA89B7EF2778ADA300BDC7C6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA4E942C277C88C8008C3F60 /* UIColor+Hex.swift in Sources */,
+				AA4E94222778B36B008C3F60 /* AuthViewModel.swift in Sources */,
 				AA89B7FB2778ADA300BDC7C6 /* ViewController.swift in Sources */,
+				AA4E94202778B35E008C3F60 /* AuthViewController.swift in Sources */,
+				AA4E94272778B3FC008C3F60 /* AuthTextField.swift in Sources */,
+				AA4E942E277C8DB8008C3F60 /* LogoView.swift in Sources */,
 				AA89B7F72778ADA300BDC7C6 /* AppDelegate.swift in Sources */,
-				AA89B7F92778ADA300BDC7C6 /* SceneDelegate.swift in Sources */,
+				AA4E9430277C917E008C3F60 /* EntranceButton.swift in Sources */,
+				AA4E94242778B378008C3F60 /* AuthModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AA89B7FC2778ADA300BDC7C6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AA89B7FD2778ADA300BDC7C6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AA89B8012778ADA500BDC7C6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -284,6 +396,7 @@
 		};
 		AA89B8082778ADA500BDC7C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3296F9B86C3DC3F8FE695ADA /* Pods-AuctionDegree.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -294,7 +407,6 @@
 				INFOPLIST_FILE = AuctionDegree/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -312,6 +424,7 @@
 		};
 		AA89B8092778ADA500BDC7C6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 383070668A82EB7573ED5952 /* Pods-AuctionDegree.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -322,7 +435,6 @@
 				INFOPLIST_FILE = AuctionDegree/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
