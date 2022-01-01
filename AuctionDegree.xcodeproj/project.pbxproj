@@ -12,6 +12,15 @@
 		AA0AC7B0277F102600769BE2 /* PropertiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0AC7AF277F102600769BE2 /* PropertiesViewModel.swift */; };
 		AA0AC7B3277F128700769BE2 /* PropertiesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0AC7B2277F128700769BE2 /* PropertiesModel.swift */; };
 		AA0AC7B5277F129800769BE2 /* PropertiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0AC7B4277F129800769BE2 /* PropertiesCell.swift */; };
+		AA0AC7B82780944E00769BE2 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0AC7B72780944E00769BE2 /* Protocols.swift */; };
+		AA0AC7BA278097D500769BE2 /* UrlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0AC7B9278097D500769BE2 /* UrlFactory.swift */; };
+		AA0AC7BC2780982800769BE2 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0AC7BB2780982800769BE2 /* Request.swift */; };
+		AA0AC7C027809DFC00769BE2 /* AuctionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0AC7BF27809DFC00769BE2 /* AuctionVC.swift */; };
+		AA0AC7C227809E0900769BE2 /* AuctionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0AC7C127809E0900769BE2 /* AuctionViewModel.swift */; };
+		AA0AC7C427809E1A00769BE2 /* AdditionalInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0AC7C327809E1A00769BE2 /* AdditionalInfoModel.swift */; };
+		AA0AC7C72780AFB500769BE2 /* AuctionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0AC7C62780AFB500769BE2 /* AuctionCell.swift */; };
+		AA0AC7CA2780B56600769BE2 /* AuctionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0AC7C92780B56600769BE2 /* AuctionModel.swift */; };
+		AA0AC7CC2780BBE800769BE2 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0AC7CB2780BBE800769BE2 /* PhotoCell.swift */; };
 		AA4E94202778B35E008C3F60 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E941F2778B35E008C3F60 /* AuthViewController.swift */; };
 		AA4E94222778B36B008C3F60 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E94212778B36B008C3F60 /* AuthViewModel.swift */; };
 		AA4E94242778B378008C3F60 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E94232778B378008C3F60 /* AuthModel.swift */; };
@@ -35,6 +44,15 @@
 		AA0AC7AF277F102600769BE2 /* PropertiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesViewModel.swift; sourceTree = "<group>"; };
 		AA0AC7B2277F128700769BE2 /* PropertiesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesModel.swift; sourceTree = "<group>"; };
 		AA0AC7B4277F129800769BE2 /* PropertiesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesCell.swift; sourceTree = "<group>"; };
+		AA0AC7B72780944E00769BE2 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		AA0AC7B9278097D500769BE2 /* UrlFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlFactory.swift; sourceTree = "<group>"; };
+		AA0AC7BB2780982800769BE2 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		AA0AC7BF27809DFC00769BE2 /* AuctionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionVC.swift; sourceTree = "<group>"; };
+		AA0AC7C127809E0900769BE2 /* AuctionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionViewModel.swift; sourceTree = "<group>"; };
+		AA0AC7C327809E1A00769BE2 /* AdditionalInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInfoModel.swift; sourceTree = "<group>"; };
+		AA0AC7C62780AFB500769BE2 /* AuctionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionCell.swift; sourceTree = "<group>"; };
+		AA0AC7C92780B56600769BE2 /* AuctionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionModel.swift; sourceTree = "<group>"; };
+		AA0AC7CB2780BBE800769BE2 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		AA4E941F2778B35E008C3F60 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		AA4E94212778B36B008C3F60 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		AA4E94232778B378008C3F60 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
@@ -100,6 +118,56 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		AA0AC7B62780941E00769BE2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				AA0AC7B72780944E00769BE2 /* Protocols.swift */,
+				AA0AC7B9278097D500769BE2 /* UrlFactory.swift */,
+				AA0AC7BB2780982800769BE2 /* Request.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		AA0AC7BD2780984100769BE2 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				AA0AC7BE27809C8E00769BE2 /* Auction */,
+				AA4E941D2778B1C7008C3F60 /* Auth */,
+				AA0AC7AC277F0FC300769BE2 /* Properties */,
+				AA4E941E2778B1D1008C3F60 /* Registration */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		AA0AC7BE27809C8E00769BE2 /* Auction */ = {
+			isa = PBXGroup;
+			children = (
+				AA0AC7BF27809DFC00769BE2 /* AuctionVC.swift */,
+				AA0AC7C127809E0900769BE2 /* AuctionViewModel.swift */,
+				AA0AC7C82780B53300769BE2 /* Models */,
+				AA0AC7C527809F6B00769BE2 /* Views */,
+			);
+			path = Auction;
+			sourceTree = "<group>";
+		};
+		AA0AC7C527809F6B00769BE2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AA0AC7C62780AFB500769BE2 /* AuctionCell.swift */,
+				AA0AC7CB2780BBE800769BE2 /* PhotoCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AA0AC7C82780B53300769BE2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AA0AC7C327809E1A00769BE2 /* AdditionalInfoModel.swift */,
+				AA0AC7C92780B56600769BE2 /* AuctionModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		AA4E941D2778B1C7008C3F60 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,12 +226,11 @@
 			isa = PBXGroup;
 			children = (
 				AA89B7F62778ADA300BDC7C6 /* AppDelegate.swift */,
-				AA0AC7AC277F0FC300769BE2 /* Properties */,
 				AA4E9431277E5C9D008C3F60 /* AppCoordinator.swift */,
 				AA4E9433277E5ED1008C3F60 /* TabBarCoordinator.swift */,
-				AA4E941E2778B1D1008C3F60 /* Registration */,
-				AA4E941D2778B1C7008C3F60 /* Auth */,
+				AA0AC7BD2780984100769BE2 /* Modules */,
 				AA4E942A277C88AD008C3F60 /* Extensions */,
+				AA0AC7B62780941E00769BE2 /* Networking */,
 				AA89B7FA2778ADA300BDC7C6 /* ViewController.swift */,
 				AA89B7FF2778ADA500BDC7C6 /* Assets.xcassets */,
 				AA89B8012778ADA500BDC7C6 /* LaunchScreen.storyboard */,
@@ -286,21 +353,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA0AC7CA2780B56600769BE2 /* AuctionModel.swift in Sources */,
 				AA4E942C277C88C8008C3F60 /* UIColor+Hex.swift in Sources */,
 				AA4E94222778B36B008C3F60 /* AuthViewModel.swift in Sources */,
 				AA4E9432277E5C9D008C3F60 /* AppCoordinator.swift in Sources */,
+				AA0AC7CC2780BBE800769BE2 /* PhotoCell.swift in Sources */,
+				AA0AC7C72780AFB500769BE2 /* AuctionCell.swift in Sources */,
 				AA0AC7B0277F102600769BE2 /* PropertiesViewModel.swift in Sources */,
 				AA0AC7AE277F101500769BE2 /* PropertiesVC.swift in Sources */,
 				AA89B7FB2778ADA300BDC7C6 /* ViewController.swift in Sources */,
+				AA0AC7BA278097D500769BE2 /* UrlFactory.swift in Sources */,
+				AA0AC7BC2780982800769BE2 /* Request.swift in Sources */,
+				AA0AC7C227809E0900769BE2 /* AuctionViewModel.swift in Sources */,
 				AA4E94202778B35E008C3F60 /* AuthViewController.swift in Sources */,
 				AA0AC7B5277F129800769BE2 /* PropertiesCell.swift in Sources */,
 				AA4E94272778B3FC008C3F60 /* AuthTextField.swift in Sources */,
 				AA4E9434277E5ED1008C3F60 /* TabBarCoordinator.swift in Sources */,
 				AA4E942E277C8DB8008C3F60 /* LogoView.swift in Sources */,
+				AA0AC7C427809E1A00769BE2 /* AdditionalInfoModel.swift in Sources */,
 				AA0AC7B3277F128700769BE2 /* PropertiesModel.swift in Sources */,
 				AA89B7F72778ADA300BDC7C6 /* AppDelegate.swift in Sources */,
 				AA4E9430277C917E008C3F60 /* EntranceButton.swift in Sources */,
 				AA4E94242778B378008C3F60 /* AuthModel.swift in Sources */,
+				AA0AC7C027809DFC00769BE2 /* AuctionVC.swift in Sources */,
+				AA0AC7B82780944E00769BE2 /* Protocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

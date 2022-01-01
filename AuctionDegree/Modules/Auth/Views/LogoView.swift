@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-class LogoView: UIView {
+final class LogoView: UIView {
     
     private let titleLabel = UILabel()
     override init(frame: CGRect) {

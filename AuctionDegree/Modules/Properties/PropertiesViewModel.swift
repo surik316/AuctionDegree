@@ -9,5 +9,12 @@ import Foundation
 import UIKit
 
 class PropertiesViewModel {
+    private(set) var propertiesArray : [PropertiesModel] = []
     
+    
+    
+    
+    func fetchProperties() {
+        
+    }
 }

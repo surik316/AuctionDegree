@@ -38,13 +38,17 @@ class PropertiesVC: UIViewController {
         tableView.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 400
         tableView.register(PropertiesCell.self, forCellReuseIdentifier: cellIdentifier)
     }
 }
 
 extension PropertiesVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return 410
+            return 440
     }
 }
 
@@ -55,7 +59,7 @@ extension PropertiesVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? PropertiesCell
-        cell?.setUpCell(model: PropertiesModel(image: UIImage(named: "car")!, name: "Твоя тачка", endDate: "29.11.2020", isFavourite: false))
+        cell?.setUpCell(model: PropertiesModel(image: UIImage(named: "car")!, name: "Твоя тачка", endDate: "29.11.2020", isFavourite: true))
         return cell ?? UITableViewCell()
     }
 }

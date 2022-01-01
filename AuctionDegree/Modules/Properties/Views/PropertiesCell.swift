@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-class PropertiesCell: UITableViewCell {
+final class PropertiesCell: UITableViewCell {
     private let propertyImageView = UIImageView()
     private let favouriteButton = UIButton()
     private let propertyName = UILabel()
@@ -25,7 +25,12 @@ class PropertiesCell: UITableViewCell {
         setupUI()
         configureUI()
     }
-        
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.contentView.frame = self.contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupUI()
@@ -34,52 +39,53 @@ class PropertiesCell: UITableViewCell {
     
     private func setupUI() {
         
-        addSubview(propertyImageView)
+        contentView.addSubview(propertyImageView)
         propertyImageView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
+            make.top.equalToSuperview()
             make.height.equalTo(230)
         }
-        
-        addSubview(favouriteButton)
+
+        contentView.addSubview(favouriteButton)
         favouriteButton.snp.makeConstraints { make in
-            make.width.equalTo(14)
-            make.height.equalTo(23)
+            make.width.equalTo(25)
+            make.height.equalTo(28)
             make.top.equalTo(propertyImageView.snp.bottom).offset(12)
             make.trailing.equalToSuperview().offset(-9)
         }
-        
-        addSubview(propertyName)
+
+        contentView.addSubview(propertyName)
         propertyName.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.top.equalTo(propertyImageView.snp.bottom).offset(15)
         }
-        
-        addSubview(startTitleLable)
+
+        contentView.addSubview(startTitleLable)
         startTitleLable.snp.makeConstraints { make in
             make.leading.equalTo(propertyName.snp.leading)
             make.top.equalTo(propertyName.snp.bottom).offset(15)
         }
         
-        addSubview(startValueLable)
+        contentView.addSubview(startValueLable)
         startValueLable.snp.makeConstraints { make in
             make.leading.equalTo(startTitleLable.snp.leading)
             make.top.equalTo(startTitleLable.snp.bottom).offset(4)
         }
-        
-        addSubview(endTitleLable)
+
+        contentView.addSubview(endTitleLable)
         endTitleLable.snp.makeConstraints { make in
             make.leading.equalTo(self.snp.centerX)
             make.top.equalTo(startTitleLable.snp.top)
         }
-        
-        addSubview(endValueLable)
+
+        contentView.addSubview(endValueLable)
         endValueLable.snp.makeConstraints { make in
             make.leading.equalTo(endTitleLable.snp.leading)
             make.top.equalTo(startValueLable.snp.top)
         }
         
-        addSubview(detailButton)
+        contentView.addSubview(detailButton)
         detailButton.snp.makeConstraints { make in
             make.bottom.equalToSuperview().offset(-10)
             make.leading.equalToSuperview().offset(10)
@@ -88,8 +94,9 @@ class PropertiesCell: UITableViewCell {
         }
     }
     private func configureUI() {
-        backgroundColor = UIColor(hex: "1E1E1E")
-        layer.cornerRadius = 34
+        contentView.backgroundColor = UIColor(hex: "565656")
+        contentView.layer.cornerRadius = 34
+        backgroundColor = .white
         
         propertyName.font = .systemFont(ofSize: 22, weight: .bold)
         propertyName.textColor = .white
@@ -106,6 +113,10 @@ class PropertiesCell: UITableViewCell {
         endValueLable.font = .systemFont(ofSize: 12, weight: .regular)
         
         propertyImageView.layer.cornerRadius = 34
+        propertyImageView.layer.masksToBounds = true
+        detailButton.nameLabel.text = "Подробнее"
+        
+        selectionStyle = .none
     }
     
     func setUpCell(model: PropertiesModel) {

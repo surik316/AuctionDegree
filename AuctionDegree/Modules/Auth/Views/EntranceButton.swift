@@ -11,7 +11,7 @@ import SnapKit
 
 class EntranceButton: UIButton {
     
-    private let nameLabel = UILabel()
+    var nameLabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
