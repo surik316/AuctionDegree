@@ -150,25 +150,25 @@ class ProfileVC: UIViewController {
     
     @objc
     private func auctionsTapped(_ sender: UITapGestureRecognizer) {
-        navigation(.myAuctions)
+        navigation(.myAuctions)?
     }
     
     @objc
     private func historyTapped(_ sender: UITapGestureRecognizer) {
-        navigation(.myHistory)
+        navigation(.myHistory)?
     }
     
     @objc
     private func editProfileTapped(_ sender: UITapGestureRecognizer) {
-        navigation(.editProfile)
+        navigation(.editProfile)?
     }
     
     @objc
     private func notificationsTapped(_ sender: UITapGestureRecognizer) {
-        navigation(.notifications)
+        navigation(.notifications)?
     }
     @objc
     private func createAuctionTapped(_ sender: UITapGestureRecognizer) {
-        navigation(.createAuction)
+        navigation(.createAuction)?
     }
 }
