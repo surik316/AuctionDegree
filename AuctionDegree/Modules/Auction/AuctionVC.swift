@@ -103,7 +103,7 @@ class AuctionVC: UIViewController {
     
     @objc
     private func slideToNext() {
-        if currentIndex < viewModel.model?.images.count ?? 0 - 1 {
+        if currentIndex < (viewModel.model?.images.count)! - 1 {
             currentIndex += 1
         } else {
             currentIndex = 0
