@@ -25,6 +25,10 @@
 		AA0AC7D127820D0400769BE2 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0AC7D027820D0400769BE2 /* ProfileViewModel.swift */; };
 		AA0AC7D327820D1300769BE2 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0AC7D227820D1300769BE2 /* ProfileModel.swift */; };
 		AA0AC7D627820F8300769BE2 /* ProfileElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0AC7D527820F8300769BE2 /* ProfileElementView.swift */; };
+		AA0AC7D927830B3300769BE2 /* AuctionCreationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0AC7D827830B3300769BE2 /* AuctionCreationVC.swift */; };
+		AA0AC7DB27830B4500769BE2 /* AuctionCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0AC7DA27830B4500769BE2 /* AuctionCreationViewModel.swift */; };
+		AA0AC7DD27830B5800769BE2 /* AuctionCreationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0AC7DC27830B5800769BE2 /* AuctionCreationModel.swift */; };
+		AA0AC7E0278370A700769BE2 /* AuctionCreationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0AC7DF278370A700769BE2 /* AuctionCreationTextField.swift */; };
 		AA4E94202778B35E008C3F60 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E941F2778B35E008C3F60 /* AuthViewController.swift */; };
 		AA4E94222778B36B008C3F60 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E94212778B36B008C3F60 /* AuthViewModel.swift */; };
 		AA4E94242778B378008C3F60 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E94232778B378008C3F60 /* AuthModel.swift */; };
@@ -61,6 +65,10 @@
 		AA0AC7D027820D0400769BE2 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		AA0AC7D227820D1300769BE2 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		AA0AC7D527820F8300769BE2 /* ProfileElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileElementView.swift; sourceTree = "<group>"; };
+		AA0AC7D827830B3300769BE2 /* AuctionCreationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionCreationVC.swift; sourceTree = "<group>"; };
+		AA0AC7DA27830B4500769BE2 /* AuctionCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionCreationViewModel.swift; sourceTree = "<group>"; };
+		AA0AC7DC27830B5800769BE2 /* AuctionCreationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionCreationModel.swift; sourceTree = "<group>"; };
+		AA0AC7DF278370A700769BE2 /* AuctionCreationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionCreationTextField.swift; sourceTree = "<group>"; };
 		AA4E941F2778B35E008C3F60 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		AA4E94212778B36B008C3F60 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		AA4E94232778B378008C3F60 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
@@ -139,6 +147,7 @@
 		AA0AC7BD2780984100769BE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				AA0AC7D727830B1B00769BE2 /* AuctionCreation */,
 				AA0AC7CD27820C5800769BE2 /* Profile */,
 				AA0AC7BE27809C8E00769BE2 /* Auction */,
 				AA4E941D2778B1C7008C3F60 /* Auth */,
@@ -192,6 +201,25 @@
 			isa = PBXGroup;
 			children = (
 				AA0AC7D527820F8300769BE2 /* ProfileElementView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AA0AC7D727830B1B00769BE2 /* AuctionCreation */ = {
+			isa = PBXGroup;
+			children = (
+				AA0AC7DE2783708C00769BE2 /* Views */,
+				AA0AC7D827830B3300769BE2 /* AuctionCreationVC.swift */,
+				AA0AC7DA27830B4500769BE2 /* AuctionCreationViewModel.swift */,
+				AA0AC7DC27830B5800769BE2 /* AuctionCreationModel.swift */,
+			);
+			path = AuctionCreation;
+			sourceTree = "<group>";
+		};
+		AA0AC7DE2783708C00769BE2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AA0AC7DF278370A700769BE2 /* AuctionCreationTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -386,9 +414,12 @@
 				AA4E94222778B36B008C3F60 /* AuthViewModel.swift in Sources */,
 				AA4E9432277E5C9D008C3F60 /* AppCoordinator.swift in Sources */,
 				AA0AC7CC2780BBE800769BE2 /* PhotoCell.swift in Sources */,
+				AA0AC7DB27830B4500769BE2 /* AuctionCreationViewModel.swift in Sources */,
 				AA0AC7CF27820C7600769BE2 /* ProfileVC.swift in Sources */,
 				AA0AC7C72780AFB500769BE2 /* AuctionCell.swift in Sources */,
+				AA0AC7D927830B3300769BE2 /* AuctionCreationVC.swift in Sources */,
 				AA0AC7B0277F102600769BE2 /* PropertiesViewModel.swift in Sources */,
+				AA0AC7E0278370A700769BE2 /* AuctionCreationTextField.swift in Sources */,
 				AA0AC7AE277F101500769BE2 /* PropertiesVC.swift in Sources */,
 				AA0AC7D327820D1300769BE2 /* ProfileModel.swift in Sources */,
 				AA89B7FB2778ADA300BDC7C6 /* ViewController.swift in Sources */,
@@ -408,6 +439,7 @@
 				AA4E9430277C917E008C3F60 /* EntranceButton.swift in Sources */,
 				AA4E94242778B378008C3F60 /* AuthModel.swift in Sources */,
 				AA0AC7C027809DFC00769BE2 /* AuctionVC.swift in Sources */,
+				AA0AC7DD27830B5800769BE2 /* AuctionCreationModel.swift in Sources */,
 				AA0AC7B82780944E00769BE2 /* Protocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
