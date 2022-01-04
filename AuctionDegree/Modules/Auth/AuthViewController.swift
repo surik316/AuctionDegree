@@ -15,8 +15,8 @@ class AuthViewController: UIViewController {
         case resetPassword
         case registration
     }
-    private let loginTextField = AuthTextField()
-    private let passwordTextField = AuthTextField()
+    private let loginTextField = AuthTextField(type: .loginTextField)
+    private let passwordTextField = AuthTextField(type: .passwordTextField)
     private let logoView = LogoView()
     private let entranceButton = EntranceButton()
     private let resetPasswordLabel = UILabel()
@@ -85,9 +85,6 @@ class AuthViewController: UIViewController {
     
     private func configureUI() {
         view.backgroundColor = .white
-        loginTextField.titleLabel.text = "Логин"
-        passwordTextField.titleLabel.text = "Пароль"
-        
         
         entranceButton.addTarget(self, action: #selector(entranceButtonTapped), for: .touchUpInside)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)

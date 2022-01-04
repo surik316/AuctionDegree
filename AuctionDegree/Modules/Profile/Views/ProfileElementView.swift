@@ -33,10 +33,10 @@ class ProfileElementView: UIView {
         
         addSubview(imageView)
         imageView.snp.makeConstraints { make in
-            make.top.equalTo(textLabel.snp.top)
+            make.centerY.equalToSuperview()
             make.trailing.equalToSuperview().offset(-10)
-            make.height.equalTo(18)
-            make.width.equalTo(12)
+            make.height.equalTo(14)
+            make.width.equalTo(10)
         }
         imageView.image = UIImage(named: "rightArrow")!
     }

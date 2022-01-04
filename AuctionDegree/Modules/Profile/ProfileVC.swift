@@ -16,6 +16,7 @@ class ProfileVC: UIViewController {
         case editProfile
         case notifications
         case createAuction
+        case getCarType
     }
     private let userImageView = UIImageView()
     private let userNameLabel = UILabel()
@@ -28,6 +29,7 @@ class ProfileVC: UIViewController {
     private let editProfileView = ProfileElementView()
     private let notificationsView = ProfileElementView()
     private let createAuctionButton = EntranceButton()
+    private let getCarTypeView = ProfileElementView()
     
     var viewModel = ProfileViewModel()
     var navigation: ((Navigation) -> Void)?
@@ -82,12 +84,13 @@ class ProfileVC: UIViewController {
         view.addSubview(functionsStackView)
         functionsStackView.addArrangedSubview(editProfileView)
         functionsStackView.addArrangedSubview(notificationsView)
+        functionsStackView.addArrangedSubview(getCarTypeView)
         
         functionsStackView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.top.equalTo(functionLabel.snp.bottom).offset(20)
-            make.height.equalTo(79)
+            make.height.equalTo(119)
         }
         
         view.addSubview(createAuctionButton)
@@ -127,6 +130,7 @@ class ProfileVC: UIViewController {
         let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(historyTapped(_:)))
         let tapGesture3 = UITapGestureRecognizer(target: self, action: #selector(editProfileTapped(_:)))
         let tapGesture4 = UITapGestureRecognizer(target: self, action: #selector(notificationsTapped(_:)))
+        let tapGesture5 = UITapGestureRecognizer(target: self, action: #selector(getCarTypeTapped(_:)))
         myAuctionView.textLabel.text = "Мои Аукционы"
         myAuctionView.addGestureRecognizer(tapGesture1)
         
@@ -138,6 +142,9 @@ class ProfileVC: UIViewController {
         
         notificationsView.textLabel.text = "Уведомления"
         notificationsView.addGestureRecognizer(tapGesture4)
+        
+        getCarTypeView.textLabel.text = "Узнать марку машины"
+        getCarTypeView.addGestureRecognizer(tapGesture5)
         
         functionLabel.textAlignment = .left
         functionLabel.text = "Функции"
@@ -170,5 +177,10 @@ class ProfileVC: UIViewController {
     @objc
     private func createAuctionTapped(_ sender: UITapGestureRecognizer) {
         navigation?(.createAuction)
+    }
+    
+    @objc
+    private func getCarTypeTapped(_ sender: UITapGestureRecognizer) {
+        navigation?(.getCarType)
     }
 }

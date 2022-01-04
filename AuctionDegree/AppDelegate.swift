@@ -12,15 +12,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    
     
     var window: UIWindow?
-    var appCoordinator: AppCoordinator?
+    private var appCoordinator: Presentable!
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = AuctionCreationVC()
+        if window == nil {
+            window = UIWindow(frame: UIScreen.main.bounds)
+        }
+        
+        let favouriteCoordinator = ProfileCoordinator()
+        favouriteCoordinator.start()
+        let auctionItemsCoordinator = AuctionItemsCoordinator()
+        auctionItemsCoordinator.start()
+        let profileCoordinator = ProfileCoordinator()
+        profileCoordinator.start()
+        
+        let tbController = TabBarCoordinator(with:  [.init(module: favouriteCoordinator, icon: UIImage(systemName: "bookmark.circle")!, title: ""), .init(module: auctionItemsCoordinator, icon: UIImage(systemName: "note.text")!, title: ""), .init(module: profileCoordinator, icon: UIImage(systemName: "person.crop.circle")!, title: "")])
+        appCoordinator = tbController
+        
+        window?.rootViewController = appCoordinator.toPresent()
         window?.makeKeyAndVisible()
-        //appCoordinator = AppCoordinator(window: window!)
-        //appCoordinator?.start()
         return true
     }
 
 }
-

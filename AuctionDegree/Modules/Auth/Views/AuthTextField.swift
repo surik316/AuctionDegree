@@ -10,9 +10,15 @@ import UIKit
 import SnapKit
 
 class AuthTextField: UITextField {
-    
-    
-    let titleLabel = UILabel()
+    enum TypeField {
+        case nameTextField
+        case fuelTextField
+        case engineCapacityTextField
+        case boxTypeCarTextField
+        case mileageTextField
+        case loginTextField
+        case passwordTextField
+    }
     private let padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     
     override init(frame: CGRect) {
@@ -20,21 +26,36 @@ class AuthTextField: UITextField {
         setupUI()
         configureUI()
     }
+    init(type: TypeField) {
+        super.init(frame: .zero)
+        setupUI()
+        configureUI()
+        switch type {
+        case .nameTextField:
+            self.attributedPlaceholder = NSAttributedString(string: "Название", attributes: [NSAttributedString.Key.foregroundColor: UIColor(hex: "565656")])
+        case .fuelTextField:
+            self.attributedPlaceholder = NSAttributedString(string: "Топливо", attributes: [NSAttributedString.Key.foregroundColor: UIColor(hex: "565656")])
+        case .engineCapacityTextField:
+            self.attributedPlaceholder = NSAttributedString(string: "Обьем двигателя", attributes: [NSAttributedString.Key.foregroundColor: UIColor(hex: "565656")])
+        case .boxTypeCarTextField:
+            self.attributedPlaceholder = NSAttributedString(string: "Тип коробки", attributes: [NSAttributedString.Key.foregroundColor: UIColor(hex: "565656")])
+        case .mileageTextField:
+            self.attributedPlaceholder = NSAttributedString(string: "Пробег", attributes: [NSAttributedString.Key.foregroundColor: UIColor(hex: "565656")])
+        case .loginTextField:
+            self.attributedPlaceholder = NSAttributedString(string: "Логин", attributes: [NSAttributedString.Key.foregroundColor: UIColor(hex: "565656")])
+        case .passwordTextField:
+            self.attributedPlaceholder = NSAttributedString(string: "Пароль", attributes: [NSAttributedString.Key.foregroundColor: UIColor(hex: "565656")])
+        }
+    }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     private func setupUI() {
-        addSubview(titleLabel)
-        titleLabel.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.leading.equalToSuperview().offset(10)
-        }
     }
     private func configureUI() {
         layer.cornerRadius = 15
         backgroundColor = UIColor(hex: "EAEAEA")
-        titleLabel.textAlignment = .left
-        titleLabel.textColor = UIColor(hex: "565656")
+        textColor = UIColor(hex: "565656")
     }
     
     override open func textRect(forBounds bounds: CGRect) -> CGRect {
