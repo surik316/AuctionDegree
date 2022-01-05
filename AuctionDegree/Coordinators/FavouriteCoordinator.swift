@@ -18,7 +18,7 @@ class FavouriteCoordinator: Presentable {
         start()
     }
     func start() {
-        let module = ProfileVC()
+        let module = AuctionVC()
         router.setRootModule(module)
     }
 

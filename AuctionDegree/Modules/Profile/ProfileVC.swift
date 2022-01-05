@@ -40,7 +40,6 @@ class ProfileVC: UIViewController {
         setupUI()
         configureUI()
     }
-    
     private func setupUI() {
         view.addSubview(logoView)
         logoView.snp.makeConstraints { make in
@@ -98,7 +97,7 @@ class ProfileVC: UIViewController {
             make.leading.equalToSuperview().offset(10)
             make.trailing.equalToSuperview().offset(-10)
             make.height.equalTo(50)
-            make.bottom.equalToSuperview().offset(-80)
+            make.bottom.equalToSuperview().offset(-100)
         }
     }
     

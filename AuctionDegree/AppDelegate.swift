@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window = UIWindow(frame: UIScreen.main.bounds)
         }
         
-        let favouriteCoordinator = ProfileCoordinator()
+        let favouriteCoordinator = FavouriteCoordinator()
         favouriteCoordinator.start()
         let auctionItemsCoordinator = AuctionItemsCoordinator()
         auctionItemsCoordinator.start()

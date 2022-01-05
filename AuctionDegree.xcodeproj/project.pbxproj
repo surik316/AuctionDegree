@@ -52,6 +52,10 @@
 		AA89B7FB2778ADA300BDC7C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA89B7FA2778ADA300BDC7C6 /* ViewController.swift */; };
 		AA89B8002778ADA500BDC7C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA89B7FF2778ADA500BDC7C6 /* Assets.xcassets */; };
 		AA89B8032778ADA500BDC7C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA89B8012778ADA500BDC7C6 /* LaunchScreen.storyboard */; };
+		AAC6CBB82785BF3D00DEF2D8 /* GetTypeCarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC6CBB72785BF3D00DEF2D8 /* GetTypeCarVC.swift */; };
+		AAC6CBBA2785D4B400DEF2D8 /* GetTypeCarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC6CBB92785D4B400DEF2D8 /* GetTypeCarViewModel.swift */; };
+		AAC6CBBD2785D7BF00DEF2D8 /* PhotoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC6CBBC2785D7BF00DEF2D8 /* PhotoButton.swift */; };
+		AAC6CBBF2785E0BF00DEF2D8 /* CarNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC6CBBE2785E0BF00DEF2D8 /* CarNumberTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +108,10 @@
 		AA89B7FF2778ADA500BDC7C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA89B8022778ADA500BDC7C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA89B8042778ADA500BDC7C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAC6CBB72785BF3D00DEF2D8 /* GetTypeCarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTypeCarVC.swift; sourceTree = "<group>"; };
+		AAC6CBB92785D4B400DEF2D8 /* GetTypeCarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTypeCarViewModel.swift; sourceTree = "<group>"; };
+		AAC6CBBC2785D7BF00DEF2D8 /* PhotoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoButton.swift; sourceTree = "<group>"; };
+		AAC6CBBE2785E0BF00DEF2D8 /* CarNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarNumberTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +175,7 @@
 		AA0AC7BD2780984100769BE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				AAC6CBB62785BF2300DEF2D8 /* Camera */,
 				AA0AC7D727830B1B00769BE2 /* AuctionCreation */,
 				AA0AC7CD27820C5800769BE2 /* Profile */,
 				AA0AC7BE27809C8E00769BE2 /* Auction */,
@@ -349,6 +358,25 @@
 			path = AuctionDegree;
 			sourceTree = "<group>";
 		};
+		AAC6CBB62785BF2300DEF2D8 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				AAC6CBB72785BF3D00DEF2D8 /* GetTypeCarVC.swift */,
+				AAC6CBB92785D4B400DEF2D8 /* GetTypeCarViewModel.swift */,
+				AAC6CBBB2785D61100DEF2D8 /* Views */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		AAC6CBBB2785D61100DEF2D8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AAC6CBBC2785D7BF00DEF2D8 /* PhotoButton.swift */,
+				AAC6CBBE2785E0BF00DEF2D8 /* CarNumberTextField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -463,12 +491,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAC6CBBA2785D4B400DEF2D8 /* GetTypeCarViewModel.swift in Sources */,
 				AA0AC7E627846E1E00769BE2 /* FavouriteCoordinator.swift in Sources */,
 				AA0AC7CA2780B56600769BE2 /* AuctionModel.swift in Sources */,
 				AA4E942C277C88C8008C3F60 /* UIColor+Hex.swift in Sources */,
 				AA0AC7F92784D9E900769BE2 /* UIApplication+TopViewController.swift in Sources */,
 				AA0AC7F32784C2EF00769BE2 /* ScrollableStackView.swift in Sources */,
 				AA4E94222778B36B008C3F60 /* AuthViewModel.swift in Sources */,
+				AAC6CBB82785BF3D00DEF2D8 /* GetTypeCarVC.swift in Sources */,
 				AA0AC7CC2780BBE800769BE2 /* PhotoCell.swift in Sources */,
 				AA0AC7DB27830B4500769BE2 /* AuctionCreationViewModel.swift in Sources */,
 				AA0AC7CF27820C7600769BE2 /* ProfileVC.swift in Sources */,
@@ -478,8 +508,10 @@
 				AA0AC7E0278370A700769BE2 /* AuctionCreationTextField.swift in Sources */,
 				AA0AC7E427846DF700769BE2 /* AuctionItemsCoordinator.swift in Sources */,
 				AA0AC7AE277F101500769BE2 /* PropertiesVC.swift in Sources */,
+				AAC6CBBF2785E0BF00DEF2D8 /* CarNumberTextField.swift in Sources */,
 				AA0AC7D327820D1300769BE2 /* ProfileModel.swift in Sources */,
 				AA89B7FB2778ADA300BDC7C6 /* ViewController.swift in Sources */,
+				AAC6CBBD2785D7BF00DEF2D8 /* PhotoButton.swift in Sources */,
 				AA0AC7D127820D0400769BE2 /* ProfileViewModel.swift in Sources */,
 				AA0AC7F72784C38C00769BE2 /* UIView+pins.swift in Sources */,
 				AA0AC7F52784C31600769BE2 /* AutoLayoutView.swift in Sources */,
@@ -646,7 +678,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5SN8K8S4HD;
+				DEVELOPMENT_TEAM = 3T6FSDE8C7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AuctionDegree/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -674,7 +706,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5SN8K8S4HD;
+				DEVELOPMENT_TEAM = 3T6FSDE8C7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AuctionDegree/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

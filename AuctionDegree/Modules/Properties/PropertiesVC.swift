@@ -21,15 +21,15 @@ class PropertiesVC: UIViewController {
         super.viewDidLoad()
         setupUI()
         configureUI()
+        //navigationController?.tabBarController?.tabBar.backgroundColor = .white
     }
-    
     private func setupUI() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(6)
             make.trailing.equalToSuperview().offset(-6)
-            make.top.equalToSuperview().offset(80)
-            make.bottom.equalToSuperview()
+            make.top.equalToSuperview().offset(108)
+            make.bottom.equalToSuperview().offset(-25)
         }
     }
     
@@ -54,7 +54,7 @@ extension PropertiesVC: UITableViewDelegate {
 
 extension PropertiesVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 19
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

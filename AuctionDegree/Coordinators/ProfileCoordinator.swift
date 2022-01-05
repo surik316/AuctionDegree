@@ -31,7 +31,7 @@ class ProfileCoordinator: Presentable {
             case .myAuctions:
                 print("")
             case .getCarType:
-                print("")
+                self?.presentGetCarTypeVC()
             }
         }
         router.setRootModule(module)
@@ -80,6 +80,26 @@ class ProfileCoordinator: Presentable {
                 print("")
             }
             
+        }
+        router.present(nav, animated: true, completion: nil)
+    }
+    
+    func presentGetCarTypeVC() {
+        let module = GetTypeCarVC()
+        let nav = UINavigationController(rootViewController: module)
+        nav.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        nav.navigationBar.shadowImage = UIImage()
+        nav.navigationBar.tintColor = .white
+        nav.modalPresentationStyle = .overFullScreen
+        module.navigation = { [weak self] nav in
+            switch nav{
+            case .dismiss:
+                self?.router.popModule(animated: true)
+            case .getCarType:
+                print("")
+            case .takePhoto:
+                print("oop")
+            }
         }
         router.present(nav, animated: true, completion: nil)
     }

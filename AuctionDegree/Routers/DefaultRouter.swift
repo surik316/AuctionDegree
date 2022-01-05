@@ -36,7 +36,7 @@ class DefaultRouter: Presentable {
         }
         container.navigationBar.setBackgroundImage(UIImage(), for: .default)
         container.navigationBar.shadowImage = UIImage()
-        container.navigationBar.isTranslucent = true
+        container.navigationBar.isTranslucent = false
         container.navigationBar.barTintColor = .white
         container.navigationBar.tintColor = .white
         container.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]

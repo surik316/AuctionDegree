@@ -18,7 +18,7 @@ class AuctionItemsCoordinator: Presentable {
         start()
     }
     func start() {
-        let module = AuctionVC()
+        let module = PropertiesVC()
         router.setRootModule(module)
     }
 
