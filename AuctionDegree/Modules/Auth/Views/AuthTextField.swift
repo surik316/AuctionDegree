@@ -18,6 +18,7 @@ class AuthTextField: UITextField {
         case mileageTextField
         case loginTextField
         case passwordTextField
+        case confirmPasswordTextField
     }
     private let padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     
@@ -45,6 +46,8 @@ class AuthTextField: UITextField {
             self.attributedPlaceholder = NSAttributedString(string: "Логин", attributes: [NSAttributedString.Key.foregroundColor: UIColor(hex: "565656")])
         case .passwordTextField:
             self.attributedPlaceholder = NSAttributedString(string: "Пароль", attributes: [NSAttributedString.Key.foregroundColor: UIColor(hex: "565656")])
+        case .confirmPasswordTextField:
+            self.attributedPlaceholder = NSAttributedString(string: "Подтвердите пароль", attributes: [NSAttributedString.Key.foregroundColor: UIColor(hex: "565656")])
         }
     }
     required init?(coder: NSCoder) {

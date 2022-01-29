@@ -42,8 +42,21 @@ class AuthRegCoordinator: Presentable {
     
     func presentRegistration() {
         let module = RegistrationVC()
-        
-        router.push(module, animated: true)
+        let nav = UINavigationController(rootViewController: module)
+        nav.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        nav.navigationBar.shadowImage = UIImage()
+        nav.navigationBar.tintColor = .white
+        nav.modalPresentationStyle = .overFullScreen
+        module.navigation = { [weak self] typeNav in
+            switch typeNav {
+            case .back:
+                self?.router.popModule(animated: true)
+            case .registration:
+                self?.result?(.success(Void()))
+            }
+            
+        }
+        router.present(nav, animated: true, completion: nil)
     }
     func processPush(_ push: [String: Any]) {
         if let modalModule = router.modules.filter({ (kind) -> Bool in

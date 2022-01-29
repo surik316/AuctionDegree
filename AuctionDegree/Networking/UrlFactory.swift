@@ -9,9 +9,10 @@ import Foundation
 
 enum CoronaEndPoint: UrlProtocol {
     case auth
+    case registration
     var scheme: String {
         switch self {
-        case .auth:
+        case .auth, .registration:
             return "http"
         default:
             return "https"
@@ -28,18 +29,20 @@ enum CoronaEndPoint: UrlProtocol {
         switch self {
         case .auth:
             return "/auth/"
+        case .registration:
+            return "/reg/"
         }
     }
     var parameters: [URLQueryItem] {
         switch self {
-        case .auth:
+        case .auth, .registration:
             return []
         }
     }
     
     var method: String {
         switch self {
-        case .auth:
+        case .auth, .registration:
             return "POST"
         }
     }
