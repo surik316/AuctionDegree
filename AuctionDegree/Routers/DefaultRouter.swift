@@ -117,5 +117,4 @@ class DefaultRouter: Presentable {
 
     func presentScreen(_ identifier: String) {}
     func processPush(_ push: [String: Any]) {}
-    func presentSplash() {}
 }

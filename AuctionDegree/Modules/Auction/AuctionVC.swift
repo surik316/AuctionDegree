@@ -24,7 +24,9 @@ class AuctionVC: UIViewController {
     private let auctionTableView = UITableView()
     private let scrollView = UIScrollView()
     private let pageControl = UIPageControl()
-    
+    private let imagesIdetifierCell = "imagesCellIdentifier"
+    private let addInfoIdetifierCell = "addInfoCellIdentifier"
+    private let auctionInfoIdetifierCell = "auctionInfoCellIdentifier"
     var viewModel = AuctionViewModel()
     var timer: Timer?
     var currentIndex = 0
@@ -91,8 +93,21 @@ class AuctionVC: UIViewController {
         nameLabel.font = .systemFont(ofSize: 24, weight: .semibold)
         nameLabel.textColor = UIColor(hex: "565656")
         
-        scrollView.backgroundColor = .green
-        
+        scrollView.addSubview(additionInfoTableView)
+        additionInfoTableView.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.top.equalToSuperview()
+        }
+        additionInfoTableView.backgroundColor = .white
+        additionInfoTableView.delegate = self
+        additionInfoTableView.dataSource = self
+        additionInfoTableView.separatorStyle = .none
+        additionInfoTableView.showsVerticalScrollIndicator = false
+        additionInfoTableView.rowHeight = UITableView.automaticDimension
+        additionInfoTableView.estimatedRowHeight = 400
+        additionInfoTableView.register(AuctionCell.self, forCellReuseIdentifier: addInfoIdetifierCell
+        )
         pageControl.currentPageIndicatorTintColor = .white
         pageControl.pageIndicatorTintColor = UIColor(hex: "565656")
         pageControl.numberOfPages = viewModel.model?.images.count ?? 0
@@ -133,4 +148,22 @@ extension AuctionVC: UICollectionViewDataSource {
 
 extension AuctionVC: UICollectionViewDelegateFlowLayout {
     
+}
+
+extension AuctionVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return 80
+    }
+}
+
+extension AuctionVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: addInfoIdetifierCell, for: indexPath) as? AuctionCell
+        cell?.setup(model: AuctionCell.Model(title: "some", subtitile: "some"))
+        return cell ?? UITableViewCell()
+    }
 }

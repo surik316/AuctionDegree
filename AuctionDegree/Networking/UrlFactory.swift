@@ -8,12 +8,11 @@
 import Foundation
 
 enum CoronaEndPoint: UrlProtocol {
-    case getCountryData(name: String)
-    case getStateData(name: String)
-    case getWorldData
-    case getOtherCountriesData
+    case auth
     var scheme: String {
         switch self {
+        case .auth:
+            return "http"
         default:
             return "https"
         }
@@ -22,39 +21,26 @@ enum CoronaEndPoint: UrlProtocol {
     var baseURL: String {
         switch self {
         default:
-            return "corona.lmao.ninja"
+            return "178.20.45.246"
         }
     }
     var path: String {
         switch self {
-        case .getCountryData(let name):
-            return "/v2/countries/\(name)"
-        case .getStateData(let name):
-            return "/v2/states/\(name)"
-        case .getWorldData:
-            return "/v2/all"
-        case .getOtherCountriesData:
-            return "/v2/countries"
+        case .auth:
+            return "/auth/"
         }
     }
     var parameters: [URLQueryItem] {
         switch self {
-        case .getCountryData:
-            return [URLQueryItem(name: "yesterday", value: nil),
-                    URLQueryItem(name: "strict", value: nil),
-                    URLQueryItem(name: "query%20", value: nil)]
-        case .getStateData, .getWorldData:
-            return [URLQueryItem(name: "yesterday", value: nil)]
-        case .getOtherCountriesData:
-            return [URLQueryItem(name: "yesterday", value: nil),
-                    URLQueryItem(name: "sort", value: nil)]
+        case .auth:
+            return []
         }
     }
     
     var method: String {
         switch self {
-        case .getCountryData, .getStateData,.getWorldData, .getOtherCountriesData:
-            return "GET"
+        case .auth:
+            return "POST"
         }
     }
 }

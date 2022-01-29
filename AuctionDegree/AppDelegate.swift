@@ -18,7 +18,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if window == nil {
             window = UIWindow(frame: UIScreen.main.bounds)
         }
-        
+        if UserDefaults.standard.userToken == "" {
+            auth()
+        } else {
+            startApp()
+        }
+        return true
+    }
+    
+    func auth() {
+    
+        let authRegCoordinator = AuthRegCoordinator()
+        authRegCoordinator.start()
+        authRegCoordinator.result = { [weak self] result in
+            switch result {
+            case .success():
+                DispatchQueue.main.async {
+                    self?.startApp()
+                }
+            default:
+                break
+            }
+            return
+        }
+        appCoordinator = authRegCoordinator
+        window?.rootViewController = authRegCoordinator.toPresent()
+        window?.makeKeyAndVisible()
+    }
+    
+    func startApp() {
         let favouriteCoordinator = FavouriteCoordinator()
         favouriteCoordinator.start()
         let auctionItemsCoordinator = AuctionItemsCoordinator()
@@ -28,10 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let tbController = TabBarCoordinator(with:  [.init(module: favouriteCoordinator, icon: UIImage(systemName: "bookmark.circle")!, title: ""), .init(module: auctionItemsCoordinator, icon: UIImage(systemName: "note.text")!, title: ""), .init(module: profileCoordinator, icon: UIImage(systemName: "person.crop.circle")!, title: "")])
         appCoordinator = tbController
-        
         window?.rootViewController = appCoordinator.toPresent()
         window?.makeKeyAndVisible()
-        return true
     }
-
 }

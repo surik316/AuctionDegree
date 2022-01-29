@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct AuthModel {
-    let email: String
+struct AuthModel: Codable {
+    let login: String
     let password: String
 }

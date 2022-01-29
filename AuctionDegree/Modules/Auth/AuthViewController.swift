@@ -15,6 +15,7 @@ class AuthViewController: UIViewController {
         case resetPassword
         case registration
     }
+
     private let loginTextField = AuthTextField(type: .loginTextField)
     private let passwordTextField = AuthTextField(type: .passwordTextField)
     private let logoView = LogoView()
@@ -22,13 +23,21 @@ class AuthViewController: UIViewController {
     private let resetPasswordLabel = UILabel()
     private let registrationLabel = UILabel()
     private let titleRegistrationLabel = UILabel()
-    
+    private var viewModel: AuthViewModelProtocol
     
     var navigation: ((Navigation) -> Void)?
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         configureUI()
+    }
+    init(vm: AuthViewModel) {
+        self.viewModel = vm
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     private func setupUI() {
@@ -115,7 +124,11 @@ class AuthViewController: UIViewController {
     
     @objc
     private func entranceButtonTapped() {
-        navigation?(.enter)
+        viewModel.authRequest(model: AuthModel(login: loginTextField.text ?? "",
+                                               password: passwordTextField.text ?? ""))
+        viewModel.needStart = { [weak self] in
+            self?.navigation?(.enter)
+        }
     }
     
     @objc

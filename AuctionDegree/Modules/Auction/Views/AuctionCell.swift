@@ -9,6 +9,12 @@ import Foundation
 import UIKit
 
 final class AuctionCell: UITableViewCell {
+    
+    struct Model {
+        let title: String
+        let subtitile: String
+    }
+
     private let titleLabel = UILabel()
     private let valueLabel = UILabel()
     
@@ -52,5 +58,10 @@ final class AuctionCell: UITableViewCell {
         
         valueLabel.font = .systemFont(ofSize: 12, weight: .regular)
         valueLabel.textColor = UIColor(hex: "565656")
+    }
+    
+    func setup(model: Model) {
+        titleLabel.text = model.title
+        valueLabel.text = model.subtitile
     }
 }
