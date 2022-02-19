@@ -15,6 +15,7 @@ class RegistrationVC: UIViewController {
         case back
         case registration
     }
+    
     private let label = UILabel()
     private let regButton = EntranceButton()
     private let emailTextField = AuthTextField(type: .loginTextField)
@@ -23,15 +24,16 @@ class RegistrationVC: UIViewController {
     private let stackView = UIStackView()
     private let viewModel: RegistrationViewModelProtocol = RegistrationViewModel()
     var navigation: ((Navigation) -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
         configureUI()
+        self.navigationController?.navigationBar.isTranslucent = false
     }
     
     
     private func setUI() {
-        
         
         view.addSubview(label)
         label.snp.makeConstraints { make in
@@ -73,15 +75,23 @@ class RegistrationVC: UIViewController {
         stackView.distribution = .fillEqually
         
         regButton.nameLabel.text = "Зарегистрироваться"
-        let enterGesture = UITapGestureRecognizer(target: self, action: #selector(enterAction))
-        regButton.addGestureRecognizer(enterGesture)
+        regButton.addTarget(self, action: #selector(enterAction), for: .touchUpInside)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard(_:)))
+        view.addGestureRecognizer(tapGesture)
     }
     
     @objc
     private func enterAction() {
-        if passwordTextField.text == confirmPasswordTextField.text {
-            viewModel.registrationRequest(login: emailTextField.text, password: passwordTextField.text) {
-                self.navigation?(.registration)
+        if viewModel.checkPaswwordCoincidence(first: passwordTextField.text, second: confirmPasswordTextField.text) {
+            viewModel.registrationRequest(login: emailTextField.text ?? "", password: passwordTextField.text ?? "") { [weak self] result in
+                switch result {
+                case .success:
+                    self?.navigation?(.registration)
+                case .failure:
+                    debugPrint("registration failure")
+                }
             }
         }
     }
@@ -89,5 +99,28 @@ class RegistrationVC: UIViewController {
     @objc
     private func backAction() {
         self.navigation?(.back)
+    }
+    
+    @objc
+    private func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        confirmPasswordTextField.resignFirstResponder()
+    }
+    
+    @objc
+    private func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height/2
+            }
+        }
+    }
+
+    @objc
+    private func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
 }

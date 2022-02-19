@@ -27,7 +27,7 @@ class AuthViewModel: AuthViewModelProtocol {
         self.login = model.password
         let dict = try? JSONSerialization.jsonObject(with: JSON.encoder.encode(model)) as? [String: String] ?? [:]
         
-        NetworkEngine.request(endpoint: CoronaEndPoint.auth, bodyReq: dict!) { (result: Result<AuthTokenModel, Error>) in
+        NetworkEngine.request(endpoint: AuctionEndPoint.auth, bodyReq: dict!) { (result: Result<AuthTokenModel, Error>) in
             switch result {
             case .success(let model):
                 UserDefaults.standard.userToken = model.token

@@ -13,7 +13,7 @@ class PropertiesVC: UIViewController {
     
     
     private let tableView = UITableView()
-    private(set) var viewModel = PropertiesViewModel()
+    private(set) var viewModel: PropertiesViewModelProtocol = PropertiesViewModel()
     private let cellIdentifier = "PropertyCell"
     
     
@@ -21,6 +21,9 @@ class PropertiesVC: UIViewController {
         super.viewDidLoad()
         setupUI()
         configureUI()
+        viewModel.fetchProperties { [weak self] in
+            self?.tableView.reloadData()
+        }
         //navigationController?.tabBarController?.tabBar.backgroundColor = .white
     }
     private func setupUI() {
@@ -54,12 +57,14 @@ extension PropertiesVC: UITableViewDelegate {
 
 extension PropertiesVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return viewModel.propertiesArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? PropertiesCell
-        cell?.setUpCell(model: PropertiesModel(image: UIImage(named: "car")!, name: "Твоя тачка", endDate: "29.11.2020", isFavourite: true))
+        
+        let model = viewModel.propertiesArray[indexPath.row]
+        cell?.setUpCell(model: model)
         return cell ?? UITableViewCell()
     }
 }

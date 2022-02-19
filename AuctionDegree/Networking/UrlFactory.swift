@@ -7,12 +7,14 @@
 
 import Foundation
 
-enum CoronaEndPoint: UrlProtocol {
+enum AuctionEndPoint: UrlProtocol {
     case auth
     case registration
+    case createAuction
+    case allItems
     var scheme: String {
         switch self {
-        case .auth, .registration:
+        case .auth, .registration, .allItems, .createAuction:
             return "http"
         default:
             return "https"
@@ -31,19 +33,25 @@ enum CoronaEndPoint: UrlProtocol {
             return "/auth/"
         case .registration:
             return "/reg/"
+        case .createAuction:
+            return "/item/new/"
+        case .allItems:
+            return "/item/getAll/"
         }
     }
     var parameters: [URLQueryItem] {
         switch self {
-        case .auth, .registration:
+        case .auth, .registration, .createAuction, .allItems:
             return []
         }
     }
     
     var method: String {
         switch self {
-        case .auth, .registration:
+        case .auth, .registration, .createAuction:
             return "POST"
+        case .allItems:
+            return "GET"
         }
     }
 }

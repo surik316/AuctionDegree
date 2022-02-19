@@ -8,9 +8,16 @@
 import Foundation
 import UIKit
 
-struct PropertiesModel {
-    let image: UIImage
-    let name: String
-    let endDate: String
-    let isFavourite: Bool
+struct PropertiesModel: Codable {
+    let id: Int?
+    let name: String?
+    let manufacturer: String?
+    let itemNumber: Int?
+    let starting: Bool?
+    let fuelType: String?
+    let engineCapacity: Double?
+    let transmissionType: String?
+    let mileage: String?
+    let endDate: String?
+    let image: Data?
 }

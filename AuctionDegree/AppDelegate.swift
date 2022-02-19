@@ -18,14 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if window == nil {
             window = UIWindow(frame: UIScreen.main.bounds)
         }
+        isLogged()
+        return true
+    }
+    func isLogged() {
         if UserDefaults.standard.userToken == "" {
             auth()
         } else {
             startApp()
         }
-        return true
     }
-    
     func auth() {
     
         let authRegCoordinator = AuthRegCoordinator()
@@ -53,7 +55,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         auctionItemsCoordinator.start()
         let profileCoordinator = ProfileCoordinator()
         profileCoordinator.start()
-        
+        profileCoordinator.result = { [weak self] res in
+            switch res {
+            case .canceled:
+                self?.isLogged()
+            case .success(let a):
+                debugPrint("profileCoordinator success")
+            case .failure(let a):
+                debugPrint("profileCoordinator failure")
+            }
+        }
         let tbController = TabBarCoordinator(with:  [.init(module: favouriteCoordinator, icon: UIImage(systemName: "bookmark.circle")!, title: ""), .init(module: auctionItemsCoordinator, icon: UIImage(systemName: "note.text")!, title: ""), .init(module: profileCoordinator, icon: UIImage(systemName: "person.crop.circle")!, title: "")])
         appCoordinator = tbController
         window?.rootViewController = appCoordinator.toPresent()

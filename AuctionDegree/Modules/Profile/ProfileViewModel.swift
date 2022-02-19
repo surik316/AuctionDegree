@@ -11,16 +11,13 @@ import UIKit
 struct JSON {
     static let encoder = JSONEncoder()
 }
-
+protocol ProfileViewModelProtocol {
+    
+}
 class ProfileViewModel {
     private(set) var model: ProfileModel?
     
-    
     func fetchModel() {
         model = ProfileModel(firstName: "Maksim", secondName: "Surkov", image: UIImage(named: "car")!)
-        auth()
-    }
-    
-    func auth() {
     }
 }

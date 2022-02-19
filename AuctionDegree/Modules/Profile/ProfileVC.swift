@@ -17,7 +17,9 @@ class ProfileVC: UIViewController {
         case notifications
         case createAuction
         case getCarType
+        case signOut
     }
+    
     private let userImageView = UIImageView()
     private let userNameLabel = UILabel()
     private let functionLabel = UILabel()
@@ -30,6 +32,7 @@ class ProfileVC: UIViewController {
     private let notificationsView = ProfileElementView()
     private let createAuctionButton = EntranceButton()
     private let getCarTypeView = ProfileElementView()
+    private let signOutButton = UIButton(type: .system)
     
     var viewModel = ProfileViewModel()
     var navigation: ((Navigation) -> Void)?
@@ -99,6 +102,14 @@ class ProfileVC: UIViewController {
             make.height.equalTo(50)
             make.bottom.equalToSuperview().offset(-100)
         }
+        view.addSubview(signOutButton)
+        signOutButton.snp.makeConstraints { make in
+            make.centerY.equalTo(logoView.snp.centerY)
+            make.trailing.equalToSuperview().offset(-20)
+            make.width.equalTo(45)
+            make.height.equalTo(45)
+        }
+        
     }
     
     private func configureUI() {
@@ -124,6 +135,9 @@ class ProfileVC: UIViewController {
         userNameLabel.text = (viewModel.model!.firstName + " " + viewModel.model!.secondName)
         userNameLabel.textColor = UIColor(hex: "565656")
         userNameLabel.textColor = UIColor(hex: "565656")
+        
+        signOutButton.setImage(UIImage(systemName: "arrow.down.left.circle.fill"), for: .normal)
+        signOutButton.addTarget(self, action: #selector(signOut), for: .touchUpInside)
         
         let tapGesture1 = UITapGestureRecognizer(target: self, action: #selector(auctionsTapped(_:)))
         let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(historyTapped(_:)))
@@ -181,5 +195,11 @@ class ProfileVC: UIViewController {
     @objc
     private func getCarTypeTapped(_ sender: UITapGestureRecognizer) {
         navigation?(.getCarType)
+    }
+    
+    @objc
+    private func signOut() {
+        UserDefaults.standard.userToken = ""
+        navigation?(.signOut)
     }
 }

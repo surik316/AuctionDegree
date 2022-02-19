@@ -32,6 +32,8 @@ class ProfileCoordinator: Presentable {
                 print("")
             case .getCarType:
                 self?.presentGetCarTypeVC()
+            case .signOut:
+                self?.result?(.canceled)
             }
         }
         router.setRootModule(module)
@@ -75,7 +77,7 @@ class ProfileCoordinator: Presentable {
             case .dismiss:
                 self?.router.popModule(animated: true)
             case .create:
-                print("Some")
+                self?.router.popModule(animated: true)
             case .setImage:
                 print("")
             }

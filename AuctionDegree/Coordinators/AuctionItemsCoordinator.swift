@@ -15,6 +15,8 @@ class AuctionItemsCoordinator: Presentable {
     var result: ((FlowResult<Void>) -> Void)?
     init() {
         (router.toPresent() as? UINavigationController)?.setNavigationBarHidden(true, animated: false)
+        //self?.navigationController?.tabBarController?.tabBar.backgroundColor = .white
+        //self.navigationController.navigationBar.translucent = false
         start()
     }
     func start() {

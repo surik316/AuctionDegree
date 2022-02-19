@@ -18,7 +18,7 @@ final class PropertiesCell: UITableViewCell {
     private let endTitleLable = UILabel()
     private let endValueLable = UILabel()
     private let detailButton = EntranceButton()
-    
+    private let dateFormatter = DateFormatter()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -120,10 +120,21 @@ final class PropertiesCell: UITableViewCell {
     }
     
     func setUpCell(model: PropertiesModel) {
-        propertyImageView.image = model.image
+        if model.image != nil {
+            
+        } else {
+            propertyImageView.image = UIImage(named: "car")!
+        }
         propertyName.text = model.name
         endValueLable.text = model.endDate
-        model.isFavourite ? favouriteButton.setImage(UIImage(systemName: "bookmark.fill"), for: .normal) : favouriteButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
-        startValueLable.text = "4 дня"
+        favouriteButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
+        startValueLable.text = getNormalDate(str: model.endDate ?? "")
+    }
+    
+    func getNormalDate(str: String) -> String {
+        guard let date = dateFormatter.date(from: str) else {return ""}
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .long
+        return dateFormatter.string(from: date)
     }
 }

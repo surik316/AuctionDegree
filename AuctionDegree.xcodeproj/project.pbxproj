@@ -40,6 +40,7 @@
 		AA0AC7F52784C31600769BE2 /* AutoLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0AC7F42784C31600769BE2 /* AutoLayoutView.swift */; };
 		AA0AC7F72784C38C00769BE2 /* UIView+pins.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0AC7F62784C38C00769BE2 /* UIView+pins.swift */; };
 		AA0AC7F92784D9E900769BE2 /* UIApplication+TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0AC7F82784D9E900769BE2 /* UIApplication+TopViewController.swift */; };
+		AA3FD70227C16E01008C8A68 /* DatePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3FD70127C16E01008C8A68 /* DatePickerTextField.swift */; };
 		AA4E94202778B35E008C3F60 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E941F2778B35E008C3F60 /* AuthViewController.swift */; };
 		AA4E94222778B36B008C3F60 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E94212778B36B008C3F60 /* AuthViewModel.swift */; };
 		AA4E94242778B378008C3F60 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E94232778B378008C3F60 /* AuthModel.swift */; };
@@ -100,6 +101,7 @@
 		AA0AC7F42784C31600769BE2 /* AutoLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutView.swift; sourceTree = "<group>"; };
 		AA0AC7F62784C38C00769BE2 /* UIView+pins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+pins.swift"; sourceTree = "<group>"; };
 		AA0AC7F82784D9E900769BE2 /* UIApplication+TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+TopViewController.swift"; sourceTree = "<group>"; };
+		AA3FD70127C16E01008C8A68 /* DatePickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTextField.swift; sourceTree = "<group>"; };
 		AA4E941F2778B35E008C3F60 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		AA4E94212778B36B008C3F60 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		AA4E94232778B378008C3F60 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
@@ -189,7 +191,6 @@
 			children = (
 				AA4E941D2778B1C7008C3F60 /* Auth */,
 				AA4E941E2778B1D1008C3F60 /* Registration */,
-				AAC6CBB62785BF2300DEF2D8 /* Camera */,
 				AA0AC7D727830B1B00769BE2 /* AuctionCreation */,
 				AA0AC7CD27820C5800769BE2 /* Profile */,
 				AA0AC7BE27809C8E00769BE2 /* Auction */,
@@ -249,10 +250,10 @@
 		AA0AC7D727830B1B00769BE2 /* AuctionCreation */ = {
 			isa = PBXGroup;
 			children = (
-				AA0AC7DE2783708C00769BE2 /* Views */,
 				AA0AC7D827830B3300769BE2 /* AuctionCreationVC.swift */,
 				AA0AC7DA27830B4500769BE2 /* AuctionCreationViewModel.swift */,
 				AA0AC7DC27830B5800769BE2 /* AuctionCreationModel.swift */,
+				AA0AC7DE2783708C00769BE2 /* Views */,
 			);
 			path = AuctionCreation;
 			sourceTree = "<group>";
@@ -261,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				AA0AC7DF278370A700769BE2 /* AuctionCreationTextField.swift */,
+				AA3FD70127C16E01008C8A68 /* DatePickerTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -365,6 +367,7 @@
 				AA0AC7F027847B0A00769BE2 /* Routers */,
 				AA0AC7EF27847AE800769BE2 /* Coordinators */,
 				AA0AC7BD2780984100769BE2 /* Modules */,
+				AAC6CBB62785BF2300DEF2D8 /* Camera */,
 				AA0AC7F12784C2CD00769BE2 /* Views */,
 				AA4E942A277C88AD008C3F60 /* Extensions */,
 				AA0AC7B62780941E00769BE2 /* Networking */,
@@ -564,6 +567,7 @@
 				AA89B7F72778ADA300BDC7C6 /* AppDelegate.swift in Sources */,
 				AA4E9430277C917E008C3F60 /* EntranceButton.swift in Sources */,
 				AA4E94242778B378008C3F60 /* AuthModel.swift in Sources */,
+				AA3FD70227C16E01008C8A68 /* DatePickerTextField.swift in Sources */,
 				AA0AC7C027809DFC00769BE2 /* AuctionVC.swift in Sources */,
 				AA0AC7DD27830B5800769BE2 /* AuctionCreationModel.swift in Sources */,
 				AA0AC7B82780944E00769BE2 /* Protocols.swift in Sources */,

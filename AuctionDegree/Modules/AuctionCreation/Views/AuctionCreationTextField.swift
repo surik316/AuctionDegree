@@ -15,7 +15,7 @@ class AuctionCreationTextField: UITextField {
     let imageView = UIImageView()
     private let padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     private let pickerView = UIPickerView()
-    private let data = ["none", "Да", "Нет"]
+    private let data = ["none", "True", "False"]
     private let toolBar = UIToolbar()
     override init(frame: CGRect) {
         super.init(frame: frame)
