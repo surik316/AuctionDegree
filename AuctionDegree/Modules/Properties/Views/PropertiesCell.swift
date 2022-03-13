@@ -19,7 +19,7 @@ final class PropertiesCell: UITableViewCell {
     private let endValueLable = UILabel()
     private let detailButton = EntranceButton()
     private let dateFormatter = DateFormatter()
-    
+    weak var tapDelegate: PropertiesVC!
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
@@ -49,8 +49,8 @@ final class PropertiesCell: UITableViewCell {
 
         contentView.addSubview(favouriteButton)
         favouriteButton.snp.makeConstraints { make in
-            make.width.equalTo(25)
-            make.height.equalTo(28)
+            make.width.equalTo(32)
+            make.height.equalTo(35)
             make.top.equalTo(propertyImageView.snp.bottom).offset(12)
             make.trailing.equalToSuperview().offset(-9)
         }
@@ -97,6 +97,7 @@ final class PropertiesCell: UITableViewCell {
         contentView.backgroundColor = UIColor(hex: "565656")
         contentView.layer.cornerRadius = 34
         backgroundColor = .white
+        selectionStyle = .none
         
         propertyName.font = .systemFont(ofSize: 22, weight: .bold)
         propertyName.textColor = .white
@@ -114,9 +115,9 @@ final class PropertiesCell: UITableViewCell {
         
         propertyImageView.layer.cornerRadius = 34
         propertyImageView.layer.masksToBounds = true
-        detailButton.nameLabel.text = "Подробнее"
         
-        selectionStyle = .none
+        detailButton.nameLabel.text = "Подробнее"
+        favouriteButton.addTarget(self, action: #selector(favouriteButtonTapped), for: .touchUpInside)
     }
     
     func setUpCell(model: PropertiesModel) {
@@ -126,7 +127,7 @@ final class PropertiesCell: UITableViewCell {
             propertyImageView.image = UIImage(named: "car")!
         }
         propertyName.text = model.name
-        endValueLable.text = model.endDate
+        endValueLable.text = getEndDate(str: model.endDate ?? "")
         favouriteButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
         startValueLable.text = getNormalDate(str: model.endDate ?? "")
     }
@@ -136,5 +137,21 @@ final class PropertiesCell: UITableViewCell {
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .long
         return dateFormatter.string(from: date)
+    }
+    
+    func getEndDate(str: String) -> String{
+        guard let date = dateFormatter.date(from: str) else {return ""}
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .long
+        return dateFormatter.string(from: date)
+    }
+    
+    @objc
+    private func favouriteButtonTapped() {
+        tapDelegate.favouriteTapped(cell: self)
+    }
+    
+    private func updateFavourite() {
+        
     }
 }

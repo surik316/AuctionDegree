@@ -13,18 +13,18 @@ class PropertiesVC: UIViewController {
     
     
     private let tableView = UITableView()
+    private let refreshControl = UIRefreshControl()
     private(set) var viewModel: PropertiesViewModelProtocol = PropertiesViewModel()
     private let cellIdentifier = "PropertyCell"
-    
-    
+    var navigation: ((PropertiesModel) -> Void)?
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         configureUI()
+        overrideUserInterfaceStyle = .dark
         viewModel.fetchProperties { [weak self] in
             self?.tableView.reloadData()
         }
-        //navigationController?.tabBarController?.tabBar.backgroundColor = .white
     }
     private func setupUI() {
         view.addSubview(tableView)
@@ -46,12 +46,27 @@ class PropertiesVC: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 400
         tableView.register(PropertiesCell.self, forCellReuseIdentifier: cellIdentifier)
+        refreshControl.attributedTitle = NSAttributedString(string: "Update Items")
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    @objc
+    private func refresh() {
+        viewModel.fetchProperties { [weak self] in
+            self?.tableView.reloadData()
+            self?.refreshControl.endRefreshing()
+        }
     }
 }
 
 extension PropertiesVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 440
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = viewModel.propertiesArray[indexPath.row]
+        navigation?(model)
     }
 }
 
@@ -64,7 +79,12 @@ extension PropertiesVC: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? PropertiesCell
         
         let model = viewModel.propertiesArray[indexPath.row]
+        cell?.tapDelegate = self
         cell?.setUpCell(model: model)
         return cell ?? UITableViewCell()
+    }
+    
+    func favouriteTapped(cell: PropertiesCell) {
+        
     }
 }

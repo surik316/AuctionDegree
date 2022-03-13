@@ -18,9 +18,9 @@ class RegistrationVC: UIViewController {
     
     private let label = UILabel()
     private let regButton = EntranceButton()
-    private let emailTextField = AuthTextField(type: .loginTextField)
-    private let passwordTextField = AuthTextField(type: .passwordTextField)
-    private let confirmPasswordTextField = AuthTextField(type: .confirmPasswordTextField)
+    private let emailTextField = CustomTextField(type: .loginTextField)
+    private let passwordTextField = CustomTextField(type: .passwordTextField)
+    private let confirmPasswordTextField = CustomTextField(type: .confirmPasswordTextField)
     private let stackView = UIStackView()
     private let viewModel: RegistrationViewModelProtocol = RegistrationViewModel()
     var navigation: ((Navigation) -> Void)?

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class AuctionCell: UITableViewCell {
+final class AuctionCell: UICollectionViewCell {
     
     struct Model {
         let title: String
@@ -18,8 +18,14 @@ final class AuctionCell: UITableViewCell {
     private let titleLabel = UILabel()
     private let valueLabel = UILabel()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
+        configureUI()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         setupUI()
         configureUI()
     }
@@ -29,23 +35,19 @@ final class AuctionCell: UITableViewCell {
         self.contentView.frame = self.contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setupUI()
-        configureUI()
-    }
     
     private func setupUI() {
         contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(10)
-            make.top.equalToSuperview().offset(10)
+            make.centerY.equalToSuperview()
+            
         }
         
         contentView.addSubview(valueLabel)
         valueLabel.snp.makeConstraints { make in
             make.trailing.equalToSuperview().offset(-10)
-            make.top.equalToSuperview().offset(10)
+            make.centerY.equalToSuperview()
         }
     }
     

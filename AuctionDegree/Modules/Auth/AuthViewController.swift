@@ -16,8 +16,8 @@ class AuthViewController: UIViewController {
         case registration
     }
 
-    private let loginTextField = AuthTextField(type: .loginTextField)
-    private let passwordTextField = AuthTextField(type: .passwordTextField)
+    private let loginTextField = CustomTextField(type: .loginTextField)
+    private let passwordTextField = CustomTextField(type: .passwordTextField)
     private let logoView = LogoView()
     private let entranceButton = EntranceButton()
     private let resetPasswordLabel = UILabel()

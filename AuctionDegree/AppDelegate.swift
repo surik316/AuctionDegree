@@ -67,6 +67,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         let tbController = TabBarCoordinator(with:  [.init(module: favouriteCoordinator, icon: UIImage(systemName: "bookmark.circle")!, title: ""), .init(module: auctionItemsCoordinator, icon: UIImage(systemName: "note.text")!, title: ""), .init(module: profileCoordinator, icon: UIImage(systemName: "person.crop.circle")!, title: "")])
         appCoordinator = tbController
+        if #available(iOS 13.0, *) {
+            window?.overrideUserInterfaceStyle = .light
+        }
         window?.rootViewController = appCoordinator.toPresent()
         window?.makeKeyAndVisible()
     }

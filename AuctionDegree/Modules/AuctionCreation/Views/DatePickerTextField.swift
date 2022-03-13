@@ -28,9 +28,6 @@ class DatePickerTextField: UITextField {
     
     private func setupUI() {
         
-//        dateFormatter.dateStyle = .long
-//        dateFormatter.timeStyle = .short
-        
         datePickerView.preferredDatePickerStyle = .wheels
         inputView = datePickerView
         

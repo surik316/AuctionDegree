@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ProfileElementView: UIView {
+final class ProfileElementView: UIView {
     private let imageView = UIImageView()
     var textLabel = UILabel()
     override init(frame: CGRect) {

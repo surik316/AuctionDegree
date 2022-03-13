@@ -1,5 +1,5 @@
 //
-//  AuthTextField.swift
+//  CustomTextField.swift
 //  AuctionDegree
 //
 //  Created by maksim.surkov on 26.12.2021.
@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-class AuthTextField: UITextField {
+class CustomTextField: UITextField {
     enum TypeField {
         case nameTextField
         case fuelTextField

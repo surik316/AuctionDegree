@@ -15,19 +15,37 @@ class AuctionItemsCoordinator: Presentable {
     var result: ((FlowResult<Void>) -> Void)?
     init() {
         (router.toPresent() as? UINavigationController)?.setNavigationBarHidden(true, animated: false)
-        //self?.navigationController?.tabBarController?.tabBar.backgroundColor = .white
-        //self.navigationController.navigationBar.translucent = false
         start()
     }
     func start() {
         let module = PropertiesVC()
+        module.navigation = { [weak self] model in
+            self?.presentAuction(moedl: model)
+        }
         router.setRootModule(module)
     }
 
     func toPresent() -> UIViewController {
         return router.toPresent()
     }
-
+    
+    func presentAuction(moedl: PropertiesModel) {
+        let module = AuctionVC()
+        let nav = UINavigationController(rootViewController: module)
+        nav.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        nav.navigationBar.shadowImage = UIImage()
+        nav.navigationBar.tintColor = .white
+        nav.modalPresentationStyle = .overFullScreen
+        module.navigation = { [weak self] nav in
+            switch nav {
+            case .back:
+                self?.router.popModule(animated: true)
+            }
+            
+        }
+        router.present(nav, animated: true, completion: nil)
+    }
+    
     func presentScreen(_ identifier: String) {
     }
     func processPush(_ push: [String: Any]) {

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-class EntranceButton: UIButton {
+final class EntranceButton: UIButton {
     
     var nameLabel = UILabel()
     
@@ -36,8 +36,13 @@ class EntranceButton: UIButton {
         layer.cornerRadius = 24
         
         nameLabel.text = "Войти"
+        nameLabel.textColor = .white
         nameLabel.textAlignment = .left
         nameLabel.font = .systemFont(ofSize: 17, weight: .bold)
         
+    }
+    
+    func configure(title: String) {
+        nameLabel.text = title
     }
 }
