@@ -25,7 +25,7 @@ class ProfileCoordinator: Presentable {
             case .notifications:
                 print("")
             case .editProfile:
-                print("")
+                self?.presentEditUser()
             case .myHistory:
                 print("")
             case .myAuctions:
@@ -38,7 +38,23 @@ class ProfileCoordinator: Presentable {
         }
         router.setRootModule(module)
     }
-
+    func presentEditUser() {
+        let module = EditUserDataVC()
+        module.navigation = { [weak self] nav in
+            switch nav {
+            case .back:
+                self?.router.popModule(animated: true)
+            case .apply:
+                debugPrint("Apply changes")
+            }
+        }
+        let nav = UINavigationController(rootViewController: module)
+        nav.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        nav.navigationBar.shadowImage = UIImage()
+        nav.navigationBar.tintColor = .white
+        nav.modalPresentationStyle = .overFullScreen
+        router.present(nav, animated: true, completion: nil)
+    }
     func toPresent() -> UIViewController {
         return router.toPresent()
     }
