@@ -254,12 +254,14 @@ extension AuctionVC: UICollectionViewDataSource {
                 let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: Static.auctionInfoIdetifierFooter, for: indexPath) as! AuctionFooterView
                 return footer
             }
-        } else if  collectionView === self.liveCollectionView {
+        } else if collectionView === self.liveCollectionView {
             if kind == UICollectionView.elementKindSectionHeader {
                 let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Static.auctionInfoIdetifierHeader, for: indexPath) as! AuctionHeaderView
                 
                 header.configure(text: "LIVE")
                 return header
+            } else if kind == UICollectionView.elementKindSectionFooter {
+                
             }
         }
         return UICollectionReusableView()
@@ -278,7 +280,7 @@ extension AuctionVC: UICollectionViewDataSource {
         if collectionView === self.detailsCollectionView {
             return CGSize(width: detailsCollectionView.bounds.width, height: 60)
         } else if collectionView === self.liveCollectionView  {
-            return CGSize(width: liveCollectionView.bounds.width, height: 60)
+            return CGSize(width: 0, height: 0)
         }
         return CGSize(width: 0, height: 0)
     }

@@ -14,10 +14,10 @@ class EditUserDataVC: UIViewController {
         case back
         case apply
     }
-    private let usernameTextField = CustomTextField()
+    private let usernameTextField = CustomTextField(type: .newUserName)
     private let changePhotoImageView = UIImageView()
     private let applyChangesButton = EntranceButton()
-    
+    private let imagePicker = UIImagePickerController()
     var navigation: ((Action) -> Void)?
     var viewModel: EditUserDataViewModelProtocol = EditUserDataViewModel()
     override func viewDidLoad() {
@@ -54,7 +54,6 @@ class EditUserDataVC: UIViewController {
     
     private func configureUI() {
         view.backgroundColor = .white
-        usernameTextField.text = "Имя"
         changePhotoImageView.layer.cornerRadius = 16
         changePhotoImageView.contentMode = .scaleToFill
         changePhotoImageView.image = UIImage(named: "emptyPhoto")
@@ -78,7 +77,12 @@ class EditUserDataVC: UIViewController {
         applyChangesButton.configure(title: "Подтвердить изменения")
         
         let imageGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+        changePhotoImageView.isUserInteractionEnabled = true
         changePhotoImageView.addGestureRecognizer(imageGesture)
+        
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
     }
     
     @objc
@@ -88,9 +92,11 @@ class EditUserDataVC: UIViewController {
     
     @objc
     private func imageTapped() {
-        
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            self.present(imagePicker, animated: true, completion: nil)
+        }
     }
-    
+   
     @objc
     private func apply() {
         viewModel.updateUserData(username: usernameTextField.text, image: changePhotoImageView.image) { [weak self]  in
@@ -117,5 +123,28 @@ class EditUserDataVC: UIViewController {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }
+    }
+}
+
+extension EditUserDataVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let data = convertFromUIimageToDict(info)
+        if let editingImage = data[convertInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage {
+            changePhotoImageView.image = editingImage
+            
+        }
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func convertFromUIimageToDict(_ input:[UIImagePickerController.InfoKey : Any]) -> [String: Any] {
+        return Dictionary(uniqueKeysWithValues: input.map({ key, value in (key.rawValue, value)}))
+    }
+    
+    func convertInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+        return input.rawValue
     }
 }

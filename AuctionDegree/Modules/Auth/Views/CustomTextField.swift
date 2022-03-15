@@ -21,6 +21,7 @@ class CustomTextField: UITextField {
         case confirmPasswordTextField
         case model
         case manufactured
+        case newUserName
     }
     private let padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     
@@ -54,6 +55,8 @@ class CustomTextField: UITextField {
             self.attributedPlaceholder = NSAttributedString(string: "Производитель", attributes: [NSAttributedString.Key.foregroundColor: UIColor(hex: "565656")])
         case .confirmPasswordTextField:
             self.attributedPlaceholder = NSAttributedString(string: "Подтвердите пароль", attributes: [NSAttributedString.Key.foregroundColor: UIColor(hex: "565656")])
+        case .newUserName:
+            self.attributedPlaceholder = NSAttributedString(string: "Новое имя пользователя", attributes: [NSAttributedString.Key.foregroundColor: UIColor(hex: "565656")])
         }
     }
     required init?(coder: NSCoder) {

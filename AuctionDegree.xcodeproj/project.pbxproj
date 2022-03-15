@@ -55,6 +55,8 @@
 		AA89B7FB2778ADA300BDC7C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA89B7FA2778ADA300BDC7C6 /* ViewController.swift */; };
 		AA89B8002778ADA500BDC7C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA89B7FF2778ADA500BDC7C6 /* Assets.xcassets */; };
 		AA89B8032778ADA500BDC7C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA89B8012778ADA500BDC7C6 /* LaunchScreen.storyboard */; };
+		AAABC42C27E0A2D700AE41BB /* PhotoPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAABC42B27E0A2D700AE41BB /* PhotoPickerVC.swift */; };
+		AAABC42F27E0A2FA00AE41BB /* PhotoPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAABC42E27E0A2FA00AE41BB /* PhotoPickerViewModel.swift */; };
 		AAAD2C9527C2E62F00FAA1B1 /* EditUserDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAD2C9427C2E62F00FAA1B1 /* EditUserDataVC.swift */; };
 		AAAD2C9727C2E64500FAA1B1 /* EditUserDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAD2C9627C2E64500FAA1B1 /* EditUserDataViewModel.swift */; };
 		AAC6CBB82785BF3D00DEF2D8 /* GetTypeCarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC6CBB72785BF3D00DEF2D8 /* GetTypeCarVC.swift */; };
@@ -122,6 +124,8 @@
 		AA89B7FF2778ADA500BDC7C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA89B8022778ADA500BDC7C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA89B8042778ADA500BDC7C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAABC42B27E0A2D700AE41BB /* PhotoPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerVC.swift; sourceTree = "<group>"; };
+		AAABC42E27E0A2FA00AE41BB /* PhotoPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerViewModel.swift; sourceTree = "<group>"; };
 		AAAD2C9427C2E62F00FAA1B1 /* EditUserDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserDataVC.swift; sourceTree = "<group>"; };
 		AAAD2C9627C2E64500FAA1B1 /* EditUserDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserDataViewModel.swift; sourceTree = "<group>"; };
 		AAC6CBB72785BF3D00DEF2D8 /* GetTypeCarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTypeCarVC.swift; sourceTree = "<group>"; };
@@ -197,6 +201,7 @@
 		AA0AC7BD2780984100769BE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				AAABC42D27E0A2DD00AE41BB /* PhotoPickerVC */,
 				AAAD2C9327C2E61500FAA1B1 /* EditUserData */,
 				AA4E941D2778B1C7008C3F60 /* Auth */,
 				AA4E941E2778B1D1008C3F60 /* Registration */,
@@ -390,6 +395,15 @@
 			path = AuctionDegree;
 			sourceTree = "<group>";
 		};
+		AAABC42D27E0A2DD00AE41BB /* PhotoPickerVC */ = {
+			isa = PBXGroup;
+			children = (
+				AAABC42B27E0A2D700AE41BB /* PhotoPickerVC.swift */,
+				AAABC42E27E0A2FA00AE41BB /* PhotoPickerViewModel.swift */,
+			);
+			path = PhotoPickerVC;
+			sourceTree = "<group>";
+		};
 		AAAD2C9327C2E61500FAA1B1 /* EditUserData */ = {
 			isa = PBXGroup;
 			children = (
@@ -559,6 +573,7 @@
 				AA0AC7B0277F102600769BE2 /* PropertiesViewModel.swift in Sources */,
 				AA4E359227DDE5CA0058FF5B /* AuctionHeaderView.swift in Sources */,
 				AA0AC7E0278370A700769BE2 /* AuctionCreationTextField.swift in Sources */,
+				AAABC42C27E0A2D700AE41BB /* PhotoPickerVC.swift in Sources */,
 				AA0AC7E427846DF700769BE2 /* AuctionItemsCoordinator.swift in Sources */,
 				AA0AC7AE277F101500769BE2 /* PropertiesVC.swift in Sources */,
 				AAC6CBBF2785E0BF00DEF2D8 /* CarNumberTextField.swift in Sources */,
@@ -579,6 +594,7 @@
 				AA0AC7EA27846F3500769BE2 /* CoordinatorProtocol.swift in Sources */,
 				AA4E94272778B3FC008C3F60 /* CustomTextField.swift in Sources */,
 				AAEEFF8C27A5A62500599685 /* AuthTokenModel.swift in Sources */,
+				AAABC42F27E0A2FA00AE41BB /* PhotoPickerViewModel.swift in Sources */,
 				AA0AC7E227846DDC00769BE2 /* ProfileCoordinator.swift in Sources */,
 				AA4E9434277E5ED1008C3F60 /* TabBarCoordinator.swift in Sources */,
 				AA4E942E277C8DB8008C3F60 /* LogoView.swift in Sources */,
